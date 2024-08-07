@@ -28,10 +28,13 @@ function validateForm() {
 
     if (errorMessages) {
         document.getElementById('errorMessages').innerHTML = errorMessages;
+        document.getElementById('successMessage').style.display = 'none';
         return false;
+    } else {
+        document.getElementById('errorMessages').innerHTML = '';
+        document.getElementById('successMessage').style.display = 'block';
+        return false; // Prevent actual form submission for demo purposes
     }
-
-    return true;
 }
 
 function validateEmail(email) {
